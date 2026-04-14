@@ -1,0 +1,121 @@
+.view-play-again {
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: url("../../public/backarcade.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+}
+
+.playAgain-nav {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.playAgain-nav a {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);         
+    -webkit-backdrop-filter: blur(10px); /* Compatilité safair */
+    border: solid 2px white;  
+    border-radius: 15px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.playAgain-nav img { height: 50px; }
+
+
+.victor-title { width: 1000px; }
+
+
+.main-content-pa {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: center;
+    margin: auto 0;
+    gap: 40px;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.orange-zone {
+        background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);         
+    -webkit-backdrop-filter: blur(10px); /* Compatilité safair */
+    border: solid 2px white;
+    border-radius: 25px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-family: Arial, sans-serif;
+}
+
+.column-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+}
+
+.skin-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-skin { width: 250px; }
+.player-name { font-size: 30px; font-weight: bold; margin-top: 10px; }
+
+.btn-rejouer {
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.btn-rejouer:hover{
+         background: linear-gradient(#9e3dc4, #d614ef);
+    scale: 1.05;
+}
+
+.btn-rejouer:hover { transform: scale(1.05); }
+
+.stats-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    width: 100%;
+    min-height: 400px;
+    justify-content: space-between;
+}
+
+.score-header {
+    flex: 0 0 auto;
+}
+
+.stats-details {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
+}
+
+.score-header h1 { 
+     font-size: clamp(32px, 5vw, 60px);
+
+     margin: 0 0 30px 0; 
+    }
+.stats-details p { 
+    font-size: clamp(18px, 2.5vw, 28px);
+     margin: 20px 0; 
+ 
+    }
+
+/*clamp(min, valeur idéale, max)*/ 

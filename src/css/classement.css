@@ -1,0 +1,87 @@
+.classment-view {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url("../../public/backarcade.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+.main-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.back-button {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    z-index: 10;
+}
+
+.back-button img {
+    width: 50px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+    padding: 50px;
+}
+
+.header-title {
+    width: 100%;
+}
+
+.header-title > h1 {
+    font-size: 100px;
+        font-family: "Press Start 2P", system-ui;
+    color: white;
+
+}
+
+.table {
+     background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);         
+    -webkit-backdrop-filter: blur(10px); /* Compatilité safair */
+    border: solid 2px white;
+    padding: 15px;
+    width: 100%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+.leaderboard {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard th, .leaderboard td {
+    border: 1.5px solid white;
+    padding: 15px 10px;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.leaderboard th {
+    font-size: 1.8rem;
+    text-decoration: underline;
+    padding-bottom: 25px;
+    border-top: none;
+}
+
+.leaderboard td:first-child, .leaderboard th:first-child { border-left: none; }
+.leaderboard td:last-child, .leaderboard th:last-child { border-right: none; }
+.leaderboard tr:last-child td { border-bottom: none; }
+
+.leaderboard tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

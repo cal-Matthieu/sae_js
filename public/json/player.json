@@ -1,0 +1,20 @@
+[
+    {
+        "lien": "public/player/player1.png",
+        "carrot": "public/player/shot/carrot1.png"
+    },
+    {
+        "lien": "public/player/player2.png",
+        "carrot": "public/player/shot/carrot2.png"
+
+    },{
+        "lien": "public/player/player3.png",
+        "carrot": "public/player/shot/carrot3.png"
+
+    },{
+        "lien": "public/player/player4.png",
+        "carrot": "public/player/shot/carrot4.png"
+
+    }
+
+]

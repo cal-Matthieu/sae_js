@@ -1,0 +1,80 @@
+export const SERVER_PORT = process.env.PORT || '8080';
+
+//info player
+export const PLAYER_CONFIG = {
+	SPEED: 500,
+	ACCELERATION: 2500,
+	FRICTION: 10,
+	NB_LIVES: 3,
+	SCORE_MULTIPLIER: 1,
+
+	//image in game
+	HEIGTH: 150,
+	WIDTH: 150,
+};
+
+// info monstre
+export const MONSTER_STATS = {
+	HEALTH: 20,
+	SPEED: 250,
+
+	//Vagues
+	AMPLITUDE_WAVE: 300,
+	SPEED_WAVE: 2,
+
+	//image in game
+	HEIGTH: 100,
+	WIDTH: 100,
+};
+
+export const SHOT_STATS = {
+	//image
+	HEIGTH: 30,
+	WIDTH: 70,
+	SPEED: 500,
+};
+
+export const BONUS_STATS = {
+	//image
+	HEIGTH: 50,
+	WIDGTH: 50,
+	SPEED: 200,
+};
+
+export const GAMEPLAY_CONFIG = {
+	//enemy stat
+	ENEMY_SPAWN_INTERVAL: 2.0,
+	ENEMY_SPAWN_X: 1300,
+	ENEMY_SPAWN_Y_MAX: 750,
+	ENEMY_SCORE_VALUE: 20,
+	ENEMY_CLEANUP_X: -150,
+
+	//shot
+	ENEMY_SHOT_POSITION_X: 2,
+	ENEMY_SHOT_POSITION_Y: 2,
+	ENEMY_SHOT_DELAY: 3,
+
+	//player stats
+	PLAYER_SPAWN_X: 50,
+	PLAYER_SPAWN_Y: 400,
+	PLAYER_STARTING_LIVES: 3,
+	PLAYER_MAX_LIVES: 15,
+
+	//shot
+	PLAYER_SHOT_POSITION_X: 0.75,
+	PLAYER_SHOT_POSITION_Y: 2,
+	PLAYER_SHOT_DELAY: 0.2,
+
+	//distance tire
+	SHOT_CLEANUP_X_MAX: 1400,
+
+	//page canva
+	CANVAS_WIDTH: 1250,
+	CANVAS_HEIGHT: 850,
+
+	//Serveur
+	TIKE_RATE: 120,
+
+	//déplacement souris
+	DEADZONE: 15,
+};

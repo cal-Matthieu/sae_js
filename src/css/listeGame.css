@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+.listGame{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    min-height: 100vh;
+    background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.5), rgba(216, 2, 231, 0.225)), 
+            url("/public/backarcade.png");    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.listGameNavContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listGameHomeImg{
+    width: 50%;
+    cursor: pointer;
+}
+
+
+.listeGameTitle{
+    color: white;
+    text-align: center;
+
+}
+
+.ulList {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    width: 80%;
+}
+
+.listGame h1,H2{
+    font-family: "Press Start 2P", system-ui;
+}
+
+.ulList > button{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);         
+    -webkit-backdrop-filter: blur(10px); /* Compatilité safair */
+    font-family: "Press Start 2P", system-ui;
+    border: solid 2px white;
+    color: white;
+    transition: 300ms;
+    text-align: left;
+}
+
+.ulList > button:hover{
+        background: linear-gradient(#9e3dc4, #d614ef);
+    scale: 1.05;
+}
+

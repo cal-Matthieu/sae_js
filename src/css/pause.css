@@ -1,0 +1,90 @@
+.pause-view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    min-height: 100vh;
+    background-image: url("/public/backarcade.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;    flex-direction: column;
+    align-items: center;
+}
+
+.top-icons {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+}
+
+.icon {
+    width: 60px;
+    height: auto;
+}
+
+.pause-content {
+    margin-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.pause-content > H1 {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 100px;
+    color: white;
+}
+
+.pause-stats-card, .btn-reprendre {
+        background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);         
+    -webkit-backdrop-filter: blur(10px); /* Compatilité safair */
+    border: solid 2px white;  
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+}
+
+.pause-stats-card {
+    width: 450px;
+    padding: 30px;
+    text-align: start;
+}
+
+.pause-stats-card h1 {
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+}
+
+.pause-stats-list {
+    display: inline-block;
+}
+
+.pause-stats-list p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: white;
+}
+
+.pause-stats-list h1 {
+    justify-content: center;
+}
+
+.btn-reprendre {
+    width: 521px;
+    padding: 15px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.1s;
+    margin: 25px;
+}
+
+.btn-reprendre:active {
+    transform: scale(0.98);
+}

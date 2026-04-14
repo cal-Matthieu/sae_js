@@ -1,0 +1,133 @@
+.game-view {
+    position: relative; /* pour les enfants positionnés si besoin */
+    width: 100%;
+    height: 100vh; /* pleine hauteur de l’écran */
+    background-size: cover; /* ajuste l’image pour remplir */
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: "Press Start 2P", system-ui;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.backlong {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    background-image: url('/public/backlong2.png');
+    background-repeat: repeat-x;
+    background-size: 2593px 100%;     
+    animation: moveBackground 9s linear infinite;}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -2593px 0;
+    }
+}
+
+.game-canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+}
+
+.game-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.game-nav img {
+    width: 100px;
+}
+
+.time-value {
+    font-size: 110px;
+}
+
+.time-container{
+    display: flex;
+    align-items: center;
+}
+
+.button-container{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.stat-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+
+.score-container {
+    display: flex;
+    align-items: center;
+}
+
+.score-container img {
+    width: 120px;
+}
+
+.score-value {
+    font-size: 90px;
+}
+
+.health-container > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.health-container img {
+    width: 80px;
+}
+
+
+.overlay-black {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    background-color: black;
+    z-index: 1;
+}
+
+.redD{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    opacity: 0.5;
+}
+
+.bonusText{
+    font-size: 20px;
+      position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+    
+}

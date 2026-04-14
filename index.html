@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="src/css/classement.css" />
+		<link rel="stylesheet" href="src/css/pause.css" />
+		<link rel="stylesheet" href="src/css/endGame.css" />
+		<link rel="stylesheet" href="src/css/creditpage.css" />
+		<link rel="stylesheet" href="src/css/parameters.css" />
+		<link rel="stylesheet" href="src/css/gameview.css" />
+		<link rel="stylesheet" href="src/css/listeGame.css" />
+
+		<!--  doit toujours etre le dernier css charger car contient .hide -->
+		<link rel="stylesheet" href="src/css/connection-view.css" />
+		<script type="module" src="src/main.ts"></script>
+		<title>equipe5</title>
+	</head>
+	<body>
+		<!-- Connection view -->
+		<div class="connection-view hide">
+			<div class="logo-container">
+				<h1>V.I.C.T.O.R</h1>
+			</div>
+			<div class="navigation-container">
+				<ul class="buttonlist">
+					<li>
+						<input
+							class="inputpseudo"
+							type="text"
+							placeholder="Entrez un pseudo..."
+						/>
+					</li>
+					<li><button class="solobutton">PARTIE SOLO</button></li>
+					<li><button class="coopbutton">PARTIE COOP</button></li>
+					<li>
+						<select class="difficulty-selector" name="difficulté" id="">
+							<option value="" disabled>DIFFICULTE</option>
+							<option value="entrainement">ENTRAINEMENT</option>
+							<option value="escarmouche">ESCARMOUCHE</option>
+							<option value="assaut">ASSAUT</option>
+							<option value="bredhell">BRED’HELL</option>
+						</select>
+					</li>
+					<li><button class="statbutton">Classement</button></li>
+					<li><button class="credit-button">CREDITS</button></li>
+				</ul>
+				<div class="choosePlayerContainer">
+					<img id="player1" src="/player/player1.png" class="visible" />
+					<img id="player2" src="/player/player2.png" class="hidden" />
+					<img id="player3" src="/player/player3.png" class="hidden" />
+					<img id="player4" src="/player/player4.png" class="hidden" />
+
+					<div class="buttonChooseContainer">
+						<button class="choosePreced">PRECEDENT</button>
+						<button class="chooseNext">SUIVANT</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="containerPopup hide">
+			<div class="PopupCoop ">
+				<p>Voulez vous que cette partie soit en coop ?</p>
+				<div class="coopChoice">
+					<button class="noCoop">NON</button>
+					<button class="yesCoop">OUI</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- Game view -->
+		<div class="game-view hide">
+			<div class="game-nav">
+				<div class="time-container">
+					<span class="time-value">36</span>
+					<img src="public/time.png" alt="" />
+				</div>
+				<div class="button-container">
+					<img class="pause-button" src="public/play-buttton.png" alt="" />
+					<img class="settings-button" src="public/settings.png" alt="" />
+				</div>
+			</div>
+			<div class="canvas-container">
+				<canvas class="game-canvas" width="1250" height="850"> </canvas>
+			</div>
+			<p class="bonusText">BONUS EN COURS : AUCUN BONUS</p>
+			<div class="stat-container">
+				<div class="health-container">
+					<ul></ul>
+				</div>
+				<div class="score-container">
+					<img src="public/stonck.png" alt="" />
+					<span class="score-value">280</span>
+				</div>
+			</div>
+			<div class="redD hide"></div>
+			<div class="backlong"></div>
+		</div>
+
+		<!-- Classement view -->
+		<div class="classment-view hide">
+			<a href="#" class="back-button">
+				<img src="/public/return.png" alt="Retour" />
+			</a>
+			<div class="main-container">
+				<div class="header-title">
+					<h1>CLASSEMENT</h1>
+				</div>
+
+				<div class="table">
+					<table class="leaderboard">
+						<thead>
+							<tr>
+								<th>Joueurs</th>
+								<th>Ennemis</th>
+								<th>Difficulté</th>
+								<th>Temps</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Pause view-->
+		<div class="pause-view hide">
+			<div class="top-icons">
+				<a href="#" class="btn-home-link"
+					><img src="public/home.png" class="icon-home icon"
+				/></a>
+				<a href="#" class="btn-param-link"
+					><img src="public/settings.png" class="icon-param icon"
+				/></a>
+			</div>
+
+			<div class="pause-content">
+				<h1>PAUSE</h1>
+
+				<div class="pause-stats-card">
+					<div class="pause-stats-list">
+						<h1 style="color: white" class="pause-pseudo">JOUEUR</h1>
+						<p class="pause-pv">Points de vies restants : 3</p>
+						<p class="pause-kill-value">kill : 0</p>
+						<p class="pause-score-value">SCORE : 0</p>
+						<p class="pause-time-value">TEMPS : 0s</p>
+					</div>
+				</div>
+			</div>
+
+			<button class="btn-reprendre">REPRENDRE</button>
+		</div>
+
+		<!-- Liste game Coop -->
+		<div class="listGame">
+			<div class="listGameNavContainer">
+				<img class="listGameHomeImg" src="public/home.png" alt="" />
+			</div>
+			<h1 class="listeGameTitle">Liste des parties joignables</h1>
+			<ul class="ulList"></ul>
+		</div>
+
+		<!-- parameter view-->
+		<div class="parameters hide">
+			<div class="title">
+				<h1>PARAMETRES</h1>
+			</div>
+			<div class="move-form orange-zone">
+				<form>
+					<h1>Type de Déplacement</h1>
+					<div class="choice">
+						<input
+							type="radio"
+							id="clavier"
+							name="move"
+							value="clavier"
+							checked
+						/>
+						<label for="clavier"> Clavier </label><br />
+
+						<input type="radio" id="souris" name="move" value="souris" />
+						<label for="souris"> Souris </label><br />
+					</div>
+				</form>
+			</div>
+			<div class="quitter orange-zone">
+				<p>Quitter</p>
+			</div>
+		</div>
+
+		<!-- play again view-->
+		<div class="view-play-again hide">
+			<nav class="playAgain-nav">
+				<a href="#" class="homePA"><img src="public/home.png" alt="Home" /></a>
+				<a href="#" class="statPA"
+					><img src="public/classbutton.png" alt="Stats"
+				/></a>
+			</nav>
+
+			<div class="main-content-pa">
+				<div class="column-left">
+					<div class="skin-card orange-zone">
+						<img
+							id="player1end"
+							class="main-skin"
+							src="/player/player1.png"
+							class="visible"
+						/>
+						<img
+							id="player2end"
+							class="main-skin"
+							src="/player/player2.png"
+							class="hidden"
+						/>
+						<img
+							id="player3end"
+							class="main-skin"
+							src="/player/player3.png"
+							class="hidden"
+						/>
+						<img
+							id="player4end"
+							class="main-skin"
+							src="/player/player4.png"
+							class="hidden"
+						/>
+						<p class="player-name">NOM</p>
+					</div>
+
+					<div class="btn-rejouer orange-zone">
+						<p>REJOUER</p>
+					</div>
+				</div>
+
+				<div class="stats-card orange-zone">
+					<div class="score-header">
+						<h1>Score :</h1>
+					</div>
+					<div class="stats-details">
+						<p class="difficulty">Difficulté :</p>
+						<p class="kills">Ennemis abattus :</p>
+						<p class="Time">Temps en jeu :</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Credit view -->
+		<div class="credit-view hide">
+			<header>
+				<a href="#" class="btn-return">
+					<img src="./return.png" alt="Retour au menu" />
+				</a>
+				<div class="title-container">
+					<h1>CREDITS</h1>
+				</div>
+				<a href="#" class="easterEggButton">
+					<p>?</p>
+				</a>
+			</header>
+			<main>
+				<section class="container-group">
+					<article class="profil">
+						<img src="./public/devImg/alex.png" alt="Avatar" class="avatar" />
+						<h2>Alex Marescaux</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> minecraft</li>
+							<li><strong>Surnom :</strong> Alex</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+
+					<article class="profil">
+						<img
+							src="./public/devImg/matthieu.jpeg"
+							alt="Avatar"
+							class="avatar"
+						/>
+						<h2>Matthieu Calesse</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> la bourse</li>
+							<li><strong>Surnom :</strong> Le M</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+
+					<article class="profil">
+						<img src="./public/devImg/lucas.jpeg" alt="Avatar" class="avatar" />
+						<h2>Lucas Couraudron</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> among us</li>
+							<li><strong>Surnom :</strong> Lulu</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+
+					<article class="profil">
+						<img
+							src="./public/devImg/mathieu.jpg"
+							alt="Avatar"
+							class="avatar"
+						/>
+						<h2>Mathieu Poumaere</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> la vie</li>
+							<li><strong>Surnom :</strong> La forge</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

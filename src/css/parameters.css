@@ -1,0 +1,84 @@
+.parameters{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:40px;
+}
+
+.parameters{
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url("/public/backarcade.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+    overflow: hidden;
+}
+
+.title{
+    text-align:center;
+    font-family: "Press Start 2P", system-ui;
+
+}
+
+.title > H1 {
+    font-size: 100px;
+}
+
+
+.orange-zone{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);         
+    -webkit-backdrop-filter: blur(10px); /* Compatilité safair */
+    border: solid 2px white;      border-radius:25px;
+    border:6px solid white;
+    box-shadow:0 10px 20px rgba(0,0,0,0.5);
+    cursor:pointer;
+}
+
+
+
+.move-form{
+    width: 80%;
+    padding:20px;
+    text-align:center;
+    font-size:bold ;
+}
+
+.move-form h1{
+    margin-bottom:30px;
+    font-size:40px;
+    text-shadow:3px 3px 5px rgba(0,0,0,0.5);
+}
+
+form{
+    font-size:28px;
+    justify-content: left;
+}
+.choice{
+    padding-left:5px;
+    justify-content: left;
+}
+
+input[type="radio"]{
+    transform:scale(2);
+    margin-right:10px;
+}
+
+
+.quitter{
+    width: 37%;
+    text-align:center;
+    padding:20px;
+    font-size:35px;
+    font-weight:bold;
+}
+
+.quitter:hover{
+    transform:scale(1.05);
+    transition:0.2s;
+}
