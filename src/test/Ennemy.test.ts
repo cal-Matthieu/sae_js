@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { Ennemy } from '../server/Ennemy.ts';
+import { Ennemy } from '../game/Ennemy.ts';
 
 describe('Ennemy Class', () => {
 	it('should move to the left automatically', () => {

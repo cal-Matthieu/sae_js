@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!--  doit toujours etre le dernier css charger car contient .hide -->
+		<title>equipe5</title>
+		<script type="module" crossorigin src="/sae_js/assets/index-D5ZY1cZm.js"></script>
+		<link rel="stylesheet" crossorigin href="/sae_js/assets/index-BwrurZ4_.css">
+	</head>
+	<body>
+		<!-- Connection view -->
+		<div class="connection-view hide">
+			<div class="logo-container">
+				<h1>V.I.C.T.O.R</h1>
+			</div>
+			<div class="navigation-container">
+				<ul class="buttonlist">
+					<li>
+						<input
+							class="inputpseudo"
+							type="text"
+							placeholder="Entrez un pseudo..."
+						/>
+					</li>
+					<li><button class="solobutton">PARTIE SOLO</button></li>
+	
+					<li>
+						<select class="difficulty-selector" name="difficulté" id="">
+							<option value="" disabled>DIFFICULTE</option>
+							<option value="entrainement">ENTRAINEMENT</option>
+							<option value="escarmouche">ESCARMOUCHE</option>
+							<option value="assaut">ASSAUT</option>
+							<option value="bredhell">BRED’HELL</option>
+						</select>
+					</li>
+					<li><button class="statbutton">Classement</button></li>
+					<li><button class="credit-button">CREDITS</button></li>
+				</ul>
+				<div class="choosePlayerContainer">
+					<img id="player1" src="/sae_js/player/player1.png" class="visible" />
+					<img id="player2" src="/sae_js/player/player2.png" class="hidden" />
+					<img id="player3" src="/sae_js/player/player3.png" class="hidden" />
+					<img id="player4" src="/sae_js/player/player4.png" class="hidden" />
+
+					<div class="buttonChooseContainer">
+						<button class="choosePreced">PRECEDENT</button>
+						<button class="chooseNext">SUIVANT</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Game view -->
+		<div class="game-view hide">
+			<div class="game-nav">
+				<div class="time-container">
+					<span class="time-value">36</span>
+					<img src="/sae_js/assets/time-CQhTF69E.png" alt="" />
+				</div>
+				<div class="button-container">
+					<img class="pause-button" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAMAAADDpiTIAAACAVBMVEUAAAD////+/v79/f38/Pz7+/v6+vr5+fn4+Pj39/f29vb19fXy8vLx8fHu7u7s7Ozr6+vq6urp6eno6Ojj4+Pi4uLh4eHg4ODf39/e3t7c3Nzb29va2trZ2dnY2NjX19fW1tbV1dXU1NTR0dHQ0NDPz8/Ozs7Nzc3MzMzLy8vJycnIyMjDw8PCwsLBwcHAwMC/v7++vr69vb28vLy5ubm4uLi3t7e1tbWurq6tra2srKyrq6uqqqqpqamoqKimpqaioqKhoaGenp6dnZ2cnJybm5uampqZmZmXl5eWlpaOjo6KioqJiYmIiIiGhoaFhYWEhISDg4OCgoKAgIB/f399fX18fHx7e3t6enp5eXl4eHh3d3d1dXV0dHRzc3NxcXFwcHBvb29ubm5tbW1ra2tqamppaWlnZ2dgYGBcXFxbW1taWlpXV1dWVlZVVVVTU1NSUlJNTU1MTExISEhHR0dGRkZFRUVERERCQkJBQUFAQEA+Pj49PT06Ojo5OTk4ODg1NTUzMzMxMTEuLi4tLS0qKiopKSkoKCgnJycmJiYlJSUkJCQjIyMiIiIhISEgICAfHx8eHh4bGxsaGhoZGRkYGBgXFxcWFhYUFBQTExMSEhIREREQEBAPDw8ODg4LCwsKCgoJCQkICAgHBwcGBgYFBQUEBAQDAwMCAgIBAQH///8bJZ26AAAAq3RSTlP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wC3Kj1sAAAACXBIWXMAAADFAAAAxQEdzbqoAAAJxUlEQVR4nO3dPW8cRQCA4dk9n+2zA7HMRyCQIBIFBFIURaKgQHz1UFAcXwVNCqChgII/wH9AgoKK4iQqGir4CyCQIkSERKAACQqCY8f3tQhRkIqb2/V6b+Z93y7SXDzeeTK7vujGxSgYubLrCVi3CQCeAOCttfB3Dpd9gc8hDa9ggwtYjLpe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" alt="" />
+					<img class="settings-button" src="/sae_js/assets/settings-CrcVljG7.png" alt="" />
+				</div>
+			</div>
+			<div class="canvas-container">
+				<canvas class="game-canvas" width="1250" height="850"> </canvas>
+			</div>
+			<p class="bonusText">BONUS EN COURS : AUCUN BONUS</p>
+			<div class="stat-container">
+				<div class="health-container">
+					<ul></ul>
+				</div>
+				<div class="score-container">
+					<img src="/sae_js/assets/stonck-Ghb5-4kE.png" alt="" />
+					<span class="score-value">280</span>
+				</div>
+			</div>
+			<div class="redD hide"></div>
+			<div class="backlong"></div>
+		</div>
+
+		<!-- Classement view -->
+		<div class="classment-view hide">
+			<a href="#" class="back-button">
+				<img src="/sae_js/assets/return-D2hihSx2.png" alt="Retour" />
+			</a>
+			<div class="main-container">
+				<div class="header-title">
+					<h1>CLASSEMENT</h1>
+				</div>
+
+				<div class="table">
+					<table class="leaderboard">
+						<thead>
+							<tr>
+								<th>Joueurs</th>
+								<th>Ennemis</th>
+								<th>Difficulté</th>
+								<th>Temps</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Pause view-->
+		<div class="pause-view hide">
+			<div class="top-icons">
+				<a href="#" class="btn-home-link"
+					><img src="/sae_js/assets/home-mnYZhzEo.png" class="icon-home icon"
+				/></a>
+				<a href="#" class="btn-param-link"
+					><img src="/sae_js/assets/settings-CrcVljG7.png" class="icon-param icon"
+				/></a>
+			</div>
+
+			<div class="pause-content">
+				<h1>PAUSE</h1>
+
+				<div class="pause-stats-card">
+					<div class="pause-stats-list">
+						<h1 style="color: white" class="pause-pseudo">JOUEUR</h1>
+						<p class="pause-pv">Points de vies restants : 3</p>
+						<p class="pause-kill-value">kill : 0</p>
+						<p class="pause-score-value">SCORE : 0</p>
+						<p class="pause-time-value">TEMPS : 0s</p>
+					</div>
+				</div>
+			</div>
+
+			<button class="btn-reprendre">REPRENDRE</button>
+		</div>
+
+
+
+		<!-- parameter view-->
+		<div class="parameters hide">
+			<div class="title">
+				<h1>PARAMETRES</h1>
+			</div>
+			<div class="move-form orange-zone">
+				<form>
+					<h1>Type de Déplacement</h1>
+					<div class="choice">
+						<input
+							type="radio"
+							id="clavier"
+							name="move"
+							value="clavier"
+							checked
+						/>
+						<label for="clavier"> Clavier </label><br />
+
+						<input type="radio" id="souris" name="move" value="souris" />
+						<label for="souris"> Souris </label><br />
+					</div>
+				</form>
+			</div>
+			<div class="quitter orange-zone">
+				<p>Quitter</p>
+			</div>
+		</div>
+
+		<!-- play again view-->
+		<div class="view-play-again hide">
+			<nav class="playAgain-nav">
+				<a href="#" class="homePA"><img src="/sae_js/assets/home-mnYZhzEo.png" alt="Home" /></a>
+				<a href="#" class="statPA"
+					><img src="/sae_js/assets/classbutton-CmEkBj0M.png" alt="Stats"
+				/></a>
+			</nav>
+
+			<div class="main-content-pa">
+				<div class="column-left">
+					<div class="skin-card orange-zone">
+						<img
+							id="player1end"
+							class="main-skin"
+							src="/sae_js/player/player1.png"
+							class="visible"
+						/>
+						<img
+							id="player2end"
+							class="main-skin"
+							src="/sae_js/player/player2.png"
+							class="hidden"
+						/>
+						<img
+							id="player3end"
+							class="main-skin"
+							src="/sae_js/player/player3.png"
+							class="hidden"
+						/>
+						<img
+							id="player4end"
+							class="main-skin"
+							src="/sae_js/player/player4.png"
+							class="hidden"
+						/>
+						<p class="player-name">NOM</p>
+					</div>
+
+					<div class="btn-rejouer orange-zone">
+						<p>REJOUER</p>
+					</div>
+				</div>
+
+				<div class="stats-card orange-zone">
+					<div class="score-header">
+						<h1>Score :</h1>
+					</div>
+					<div class="stats-details">
+						<p class="difficulty">Difficulté :</p>
+						<p class="kills">Ennemis abattus :</p>
+						<p class="Time">Temps en jeu :</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Credit view -->
+		<div class="credit-view hide">
+			<header>
+				<a href="#" class="btn-return">
+					<img src="./return.png" alt="Retour au menu" />
+				</a>
+				<div class="title-container">
+					<h1>CREDITS</h1>
+				</div>
+				<a href="#" class="easterEggButton">
+					<p>?</p>
+				</a>
+			</header>
+			<main>
+				<section class="container-group">
+					<article class="profil">
+						<img src="/sae_js/assets/alex-CFg0CPXo.png" alt="Avatar" class="avatar" />
+						<h2>Alex Marescaux</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> minecraft</li>
+							<li><strong>Surnom :</strong> Alex</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+
+					<article class="profil">
+						<img
+							src="/sae_js/assets/matthieu-Cdo61wHc.jpeg"
+							alt="Avatar"
+							class="avatar"
+						/>
+						<h2>Matthieu Calesse</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> la bourse</li>
+							<li><strong>Surnom :</strong> Le M</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+
+					<article class="profil">
+						<img src="/sae_js/assets/lucas-Dc6kJCYf.jpeg" alt="Avatar" class="avatar" />
+						<h2>Lucas Couraudron</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> among us</li>
+							<li><strong>Surnom :</strong> Lulu</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+
+					<article class="profil">
+						<img
+							src="/sae_js/assets/mathieu-BeSFBy1_.jpg"
+							alt="Avatar"
+							class="avatar"
+						/>
+						<h2>Mathieu Poumaere</h2>
+						<ul>
+							<li><strong>Groupe :</strong> H</li>
+							<li><strong>Jeu vidéo préféré :</strong> la vie</li>
+							<li><strong>Surnom :</strong> La forge</li>
+							<li><strong>Implication :</strong> 25%</li>
+						</ul>
+					</article>
+				</section>
+			</main>
+		</div>
+	</body>
+</html>

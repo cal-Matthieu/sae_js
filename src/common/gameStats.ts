@@ -1,5 +1,3 @@
-export const SERVER_PORT = process.env.PORT || '8080';
-
 //info player
 export const PLAYER_CONFIG = {
 	SPEED: 500,
@@ -71,9 +69,6 @@ export const GAMEPLAY_CONFIG = {
 	//page canva
 	CANVAS_WIDTH: 1250,
 	CANVAS_HEIGHT: 850,
-
-	//Serveur
-	TIKE_RATE: 120,
 
 	//déplacement souris
 	DEADZONE: 15,

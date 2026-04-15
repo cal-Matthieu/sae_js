@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { Shot } from '../server/Shot.ts';
+import { Shot } from '../game/Shot.ts';
 
 describe('Shot Class', () => {
 	// Vérifie que le projectile se déplace horizontalement vers la droite après avoir été tiré

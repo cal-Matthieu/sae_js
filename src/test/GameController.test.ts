@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { beforeEach, describe, it } from 'node:test';
-import { GameController } from '../server/GameController.ts';
-import { Player } from '../server/Player.ts';
+import { GameController } from '../game/GameController.ts';
+import { Player } from '../game/Player.ts';
 
 describe('GameController Class', () => {
 	let game: GameController;

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { Ennemy } from '../server/Ennemy.ts';
-import type { Entity } from '../server/Entity.ts';
+import { Ennemy } from '../game/Ennemy.ts';
+import type { Entity } from '../game/Entity.ts';
 
 //Test que 2 entités l'une sur l'autre sont bien en collision
 describe('collision ok, one above the other', () => {

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
-import { Player } from '../server/Player.ts';
+import { Player } from '../game/Player.ts';
 
 describe('Player Class', () => {
 	// Vérifie que le joueur se déplace en fonction de la vitesse et de l'accélération lorsqu'une direction est appliquée

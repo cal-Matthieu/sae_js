@@ -1,4 +1,4 @@
-import type { Bonus } from '../server/Bonus.ts';
+import type { Bonus } from '../game/Bonus.ts';
 
 export const Views = {
 	Connection: 'connection-view',
@@ -8,7 +8,6 @@ export const Views = {
 	Parameters: 'parameters',
 	PlayAgain: 'view-play-again',
 	Credits: 'credit-view',
-	ListGame: 'listGame',
 } as const;
 
 export interface Position {
@@ -53,12 +52,6 @@ export interface BonusEffect {
 	changeSize: Size | undefined;
 	shootPower: boolean;
 	time: number | undefined;
-}
-
-export interface AvailableGame {
-	roomId: string;
-	playersCount: number;
-	maxPlayers: number;
 }
 
 export interface Size {
