@@ -32,8 +32,8 @@ export class GameLoop {
 		// Appliquer la taille du canvas
 		this.game.canvaSize = {
 			width: window.innerWidth,
-			height: window.innerHeight,
-		} as any;
+			heigth: window.innerHeight,
+		};
 
 		this.running = true;
 		this.lastTime = performance.now();

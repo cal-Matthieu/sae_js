@@ -9,14 +9,16 @@ npm run build
 # Aller dans le dossier de build
 cd dist
 
-# Initialiser un repo git dans dist et push sur la branche gh-pages
+# Nettoyer un éventuel ancien .git
+rm -rf .git
+
+# Initialiser un repo git dans dist et push sur la branche offline
 git init
-git checkout -b gh-pages
+git checkout -b offline
 git add -A
 git commit -m 'deploy'
 
-# Push vers la branche gh-pages de ton repo
-# Adapter l'URL à ton repo GitHub :
-git push -f git@github.com:TON-USERNAME/sae_js.git gh-pages:gh-pages
+# Push vers la branche offline de ton repo
+git push -f git@github.com:cal-Matthieu/sae_js.git offline:offline
 
 cd -
